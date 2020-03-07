@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './App.css';
+
 import PersonCard from './components/personCard';
 import { Table } from 'reactstrap';
+import './App.css';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -28,8 +29,24 @@ console.log (warsData);
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+                       <div className="table"> <Table Dark>
+                       <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Height</th>
+                        <th>Mass</th>
+                        <th>Hair Color</th>
+                        <th>Skin Color</th>
+                        <th>Eye Color</th>
+                        <th>Birth Year</th>
+                        <th>Gender</th>
+                        <th>Film Count</th>
+                        <th>Starships Owned</th>
+                      </tr>
+                    </thead>
       {warsData.map(person => {
                     return (
+                   
                         <PersonCard
                             key={person.name}
                             name={person.name}
@@ -43,8 +60,11 @@ console.log (warsData);
                             films={person.films.length}
                             starships={person.starships.length}
                         />
+                      
                     );
+                    
                   })}
+                  </Table></div>
     </div>
   );
 }
