@@ -4,9 +4,9 @@ import { Table } from 'reactstrap';
 
 const PersonCard = (props) =>{
   return (
-      <tbody>
+      
         <tr>
-          <td>{props.name}</td>
+          <th scope="row">{props.name}</th>
           <td>{props.height}</td>
           <td>{props.mass}</td>
           <td>{props.hairColor}</td>
@@ -17,7 +17,6 @@ const PersonCard = (props) =>{
           <td>{props.films}</td>
           <td>{props.starships}</td>
         </tr>
-      </tbody>
     
   );
 }

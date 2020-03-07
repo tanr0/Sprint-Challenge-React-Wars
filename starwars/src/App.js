@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import PersonCard from './components/personCard';
-import { Table } from 'reactstrap';
+import { Table, Jumbotron, Container } from 'reactstrap';
 import './App.css';
 
 const App = () => {
@@ -29,6 +29,8 @@ console.log (warsData);
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Jumbotron fluid>
+        <Container fluid>
                        <div className="table"> <Table Dark>
                        <thead>
                       <tr>
@@ -46,7 +48,7 @@ console.log (warsData);
                     </thead>
       {warsData.map(person => {
                     return (
-                   
+                      <tbody>
                         <PersonCard
                             key={person.name}
                             name={person.name}
@@ -60,11 +62,13 @@ console.log (warsData);
                             films={person.films.length}
                             starships={person.starships.length}
                         />
-                      
+                      </tbody>
                     );
                     
                   })}
                   </Table></div>
+                  </Container>
+      </Jumbotron>
     </div>
   );
 }
