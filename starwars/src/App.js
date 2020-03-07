@@ -4,6 +4,7 @@ import axios from "axios";
 import PersonCard from './components/personCard';
 import { Table, Jumbotron, Container } from 'reactstrap';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
